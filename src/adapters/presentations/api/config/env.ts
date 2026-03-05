@@ -1,5 +1,5 @@
 export default {
-  mongoUrl:
+    mongoUrl:
     process.env.MONGO_URL || "mongodb://localhost:27017/padroes-projeto",
-  port: process.env.PORT || 3000,
+    port: process.env.PORT || 3000,
 };
