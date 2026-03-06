@@ -4,16 +4,14 @@ import { Request, Response } from "express";
 export const expressRouteAdapter = (controller: Controller) => {
     return async (req: Request, res: Response) => {
         const httpRequest = {
-            body: req.body
+            body: req.body,
         };
-        const httpReponse = await controller.handle(httpRequest);
+        const httpResponse = await controller.handle(httpRequest);
 
-        if (httpReponse.statusCode == 201) {
-            res.status(httpReponse.statusCode).json(httpReponse.body);
+        if (httpResponse.statusCode === 204 || httpResponse.statusCode === 201){
+            res.status(httpResponse.statusCode).json(httpResponse.body);
         } else {
-            res.status(httpReponse.statusCode).json({
-                error: httpReponse.body.message
-            });
+            res.status(httpResponse.statusCode).json({ error: httpResponse.body.message });
         }
     };
 };

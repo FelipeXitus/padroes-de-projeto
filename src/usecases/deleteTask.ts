@@ -5,5 +5,5 @@ export interface DeleteTaskModel {
 }
 
 export interface DeleteTask {
-  delete(task: DeleteTaskModel): Promise<Task>;
+  delete(task: DeleteTaskModel): Promise<Error | void>;
 }
