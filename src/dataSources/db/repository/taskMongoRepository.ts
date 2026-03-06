@@ -1,13 +1,8 @@
 import { ObjectId } from "mongodb";
 import { Task } from "../../../entities/task";
-import { AddTaskModel } from "../../../usecases/addTask";
-import { DeleteTaskModel } from "../../../usecases/deleteTask";
-import { AddTaskRepository } from "../../../usecases/repository/addTaskRepository";
-import { DeleteTaskRepository } from "../../../usecases/repository/deleteTaskRepository";
+import { AddTaskModel, DeleteTaskModel, AddTaskRepository, DeleteTaskRepository} from "../../../usecases/index";
 import { MongoManager } from "../../config/mongoManager";
-import { InvalidParamError } from "../../../adapters/presentations/api/errors/invalid-param-error";
-import { NotFoundError } from "../../../adapters/presentations/api/errors/not-found-error";
-
+import { InvalidParamError, NotFoundError } from "../../../adapters/presentations/api/errors/index";
 
 export class TaskMongoRepository implements AddTaskRepository, DeleteTaskRepository {
 
@@ -15,7 +10,7 @@ export class TaskMongoRepository implements AddTaskRepository, DeleteTaskReposit
         const taskCollection = MongoManager.getInstance().getCollection("tasks");
         const { insertedId } = await taskCollection.insertOne(taskData);
         const taskById = await taskCollection.findOne({ _id: insertedId });
-        if (!taskById) throw new Error("Task not found");
+        if (!taskById) throw new NotFoundError("task");
 
         const task: Task = {
             id: taskById._id.toHexString(),
