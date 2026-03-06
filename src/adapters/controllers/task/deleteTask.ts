@@ -2,7 +2,7 @@ import { DeleteTask } from "../../../usecases/deleteTask";
 import { Controller } from "../../interfaces/controller";
 import { HttpRequest, HttpResponse } from "../../interfaces/http";
 import { Validation } from "../../interfaces/validation";
-import { badRequest, deleted, noContent, serverError } from "../../presentations/api/httpResponses/httpResponses";
+import { badRequest, noContent, serverError } from "../../presentations/api/httpResponses/httpResponses";
 
 export class DeleteTaskController implements Controller {
     constructor(private readonly deleteTask: DeleteTask, private readonly validation: Validation) {}
