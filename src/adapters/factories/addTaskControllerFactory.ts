@@ -1,8 +1,6 @@
 import { AddTaskController } from "../controllers/task/addTask";
-import { DbAddTask } from "../../dataSources/db/dbAddTask";
-import { TaskMongoRepository } from "../../dataSources/db/repository/taskMongoRepository";
+import { DbAddTask, TaskMongoRepository, LogErrorMongoRepository } from "../../dataSources/index";
 import { LogErrorControllerDecorator } from "../decorators/logErrorControllerDecorator";
-import { LogErrorMongoRepository } from "../../dataSources/db/repository/logErrorMongoRepository";
 import { addTaskValidationCompositeFactory } from "./addTaskValidationCompositeFactory";
 
 export const taskControllerFactory = () => {

@@ -1,8 +1,7 @@
-import { HttpRequest, HttpResponse } from "../../interfaces/http";
 import { badRequest, created, serverError } from "../../presentations/api/httpResponses/httpResponses";
-import { Controller } from "../../interfaces/controller";
+import { Controller, Validation, HttpRequest, HttpResponse } from "../../interfaces/index";
 import { AddTask } from "../../../usecases/addTask";
-import { Validation } from "../../interfaces/validation";
+
 
 export class AddTaskController implements Controller {
     constructor(private readonly addTask: AddTask, private readonly validation: Validation) {}

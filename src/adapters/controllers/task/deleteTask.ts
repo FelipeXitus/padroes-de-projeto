@@ -1,7 +1,5 @@
 import { DeleteTask } from "../../../usecases/deleteTask";
-import { Controller } from "../../interfaces/controller";
-import { HttpRequest, HttpResponse } from "../../interfaces/http";
-import { Validation } from "../../interfaces/validation";
+import { Controller,  HttpRequest, HttpResponse, Validation } from "../../interfaces/index";
 import { badRequest, noContent, serverError } from "../../presentations/api/httpResponses/httpResponses";
 
 export class DeleteTaskController implements Controller {

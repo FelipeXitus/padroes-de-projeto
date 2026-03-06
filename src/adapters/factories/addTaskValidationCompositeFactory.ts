@@ -1,7 +1,5 @@
 import { Validation } from "../interfaces/validation";
-import { ValidationComposite } from "../validations/validationComposite";
-import { RequiredFieldsValidation } from "../validations/requiredFieldsValidation";
-import { DateValidation } from "../validations/dateValidation";
+import { ValidationComposite, RequiredFieldsValidation, DateValidation } from "../validations/index";
 import { DateValidatorAdapter } from "../dateValidatorAdapter";
 
 export const addTaskValidationCompositeFactory = (): Validation => {

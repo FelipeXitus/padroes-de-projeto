@@ -1,6 +1,4 @@
-import { LogErrorFallbackRepository } from "../../dataSources/db/repository/logErrorFallbackRepository";
-import { LogErrorFileRepository } from "../../dataSources/db/repository/logErrorFileRepository";
-import { LogErrorMongoRepository } from "../../dataSources/db/repository/logErrorMongoRepository";
+import { LogErrorFallbackRepository, LogErrorFileRepository, LogErrorMongoRepository } from "../../dataSources/index";
 import { LogErrorRepository } from "../../usecases/repository/logErrorRepository";
 
 export const makeLogErrorRepository = (): LogErrorRepository => {

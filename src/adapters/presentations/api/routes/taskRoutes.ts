@@ -1,7 +1,6 @@
 import { Router } from "express";
 import { expressRouteAdapter } from "../../../expressRouteAdapter";
-import { taskControllerFactory } from "../../../factories/addTaskControllerFactory";
-import { deleteTaskControllerFactory } from "../../../factories/deleteTaskControllerFactory";
+import { taskControllerFactory, deleteTaskControllerFactory } from "../../../factories/index";
 
 export default (router: Router): void => {
     router
